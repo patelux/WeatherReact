@@ -1,0 +1,18 @@
+[ 
+
+        {
+            "url": "https://www.facebook.com",
+            "id": "facebook",
+            "icon": "FacebookOutlinedIcon"
+        },
+        {
+            "url": "https://linkedin.com",
+            "id": "linkedin",
+            "icon": "LinkedInIcon"
+        },
+        {
+            "url": "https://www.instagram.com",
+            "id": "instagram",
+            "icon": "InstagramIcon"
+        }
+]   

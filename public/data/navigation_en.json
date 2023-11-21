@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Home",
+        "url" : "/"
+    },    {
+        "title": "About",
+        "url" : "/"
+    },
+    {
+        "title": "Forecast",
+        "url" : "/"
+    },
+    {
+        "title": "Contacts",
+        "url" : "/"
+    }
+]
