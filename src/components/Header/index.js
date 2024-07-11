@@ -34,7 +34,7 @@ function Header() {
     setAnchorElNav(null);
   };
   const getNavList = () => {
-    fetch('/data/navigation_en.json')
+    fetch('./data/navigation_en.json')
         .then(res => res.json())
         .then(resp => {
             setNavList(resp)
