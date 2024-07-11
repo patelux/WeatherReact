@@ -78,7 +78,7 @@ const socialListRender = socialList.map((item, index) => {
       <div className="container">
         <nav className="main_nav">
            <div className="logo-wrapper">
-                <a href="/" className="logo_link">
+           <NavLink to="/" className="logo_link">
                     <img src={logo} alt="logo" className="logo" />
                 </a>
             </div>  
