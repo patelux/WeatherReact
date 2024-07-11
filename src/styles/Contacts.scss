@@ -1,0 +1,172 @@
+.contacts {
+    position: relative;
+    height: calc(100vh - 64px);
+    min-height: 691px;
+    font-size: 1rem;
+    background-color: #5a5a5a;
+    background-image: url(../images/day/sunny-day-desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+@include tablet{ 
+    background-image: url(../images/day/sunny-day-tablet.jpg);
+}
+@include mobile{
+    background-image: url(../images/day/sunny-day-mobile.webp);
+   
+}
+@include smallmobile{
+    background-image: url(../images/day/sunny-day-smallmobile.webp);     
+}
+
+@media screen and (min-height: 0px) and (max-height: 690px){
+        height: 100%;
+}
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 120px;
+
+}
+
+.team-title {
+    color: $secondaryTextColor;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 26px;
+    line-height: 2;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+
+
+.team-item {
+    border-radius: 10px;
+    background-color: $modalHeaderTextColor;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    max-width: 270px;
+    padding: 20px;
+}
+
+.person-name {
+    color: $modalPrimaryTextColor;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.17;
+    margin-bottom: 20px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.person-position {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.17;
+    margin-bottom: 10px;
+    margin-top: 0;
+    text-align: center;
+    color: $modalPrimaryTextColor;
+
+    @include tablet {
+        font-size: 15px;
+        line-height: 1.17;
+        margin-bottom: 5px;
+    }
+}
+
+.person-image {
+    margin: auto;
+    margin-bottom: 5px;
+
+}
+.contacts_wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    gap: 35px;
+    margin-top: 30px;
+    @include mobile {
+        width: 80%;
+        }
+    }
+
+    .contact_link_phone {
+        display: inline-block;
+        color: $secondaryTextColor;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.17;
+        @include tablet{
+            font-size: 18px;
+        }
+        @include mobile{
+            font-size: 16px;
+        }
+        transition: all $transitionFunc;
+        span{
+            font-size: 16px;
+            color:  $secondaryTextColor;
+            margin-right: 10px;
+        }
+        &:hover, &:focus{
+            text-decoration: underline;
+            transform: scale(1.2);
+        }
+    
+    }
+    .contact_link_email {
+        display: inline-block;
+        color: $secondaryTextColor;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        @include tablet{
+            font-size: 18px;
+        }
+        @include mobile{
+            font-size: 16px;
+        }
+        transition: all $transitionFunc;
+        span{
+            font-size: 17px;
+            color:  $secondaryTextColor;
+            margin-right: 10px;
+        }
+        &:hover, &:focus{
+            text-decoration: underline;
+            transform: scale(1.2);
+        }
+    
+    }
+
+.team-link{
+    text-align: center;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 2;
+    text-transform: uppercase;
+    color: $secondaryTextColor;
+    margin-top: 40px;
+}
+.beetroot {
+    display: inline-block;
+    font-size: 21px;
+    font-weight: 600;
+    color:  rgb(166, 10, 61);
+    text-decoration: underline;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: all .5s ease;
+        &:hover, &:focus .beetroot{
+           transform: scale(1.1);
+    }
+}
+
+}

@@ -1,4 +1,3 @@
-// import axios from "axios";
 import { useSyncExternalStore } from 'react';
 import { weatherStore  } from '../../store/weather.js';
 import { weatherDailyStore } from '../../store/weatherDaily.js';
@@ -21,8 +20,6 @@ export default function DailyWeatherItem(){
         lat: null,
         lon: null
       });
-
-    const [isClicked, setIsClicked] = useState(false);
 
       useEffect(() => {
         if (weatherStoreCurrent) {
@@ -58,17 +55,16 @@ const getOrdinalSuffix = (day) => {
     }
 };
 
-
+let itemArray = [];
 const onClickLinkHandler = (e) => {
     e.preventDefault();
-    if (!isClicked) {
-        setIsClicked(true);
-        e.currentTarget.parentElement.classList.add('active');
-      } 
-    if (isClicked) {
-        setIsClicked(false);
-        e.currentTarget.parentElement.classList.remove('active');
-      }       
+    itemArray = Array.from(document.querySelectorAll('[data-daily-item]'));
+    itemArray.forEach((element) => {
+        if(element !== e.currentTarget.parentElement)  {
+          element.classList.remove('active');
+        }
+        });
+        e.currentTarget.parentElement.classList.toggle('active');      
 };
 const settings = {
       dots: false,
@@ -109,9 +105,9 @@ const settings = {
   };
 const everyFourthItem = weatherStoreDaily.filter((item, index) => index % 8 === 0);
 const forecastList = everyFourthItem.map((item, index) => {
-  // console.log(item);
     const temperature_max = temperatureInCelcius(item.main?.temp_max);
     const temperature_min = temperatureInCelcius(item.main?.temp_min);
+    const temperature = temperatureInCelcius(item.main?.temp);
     const iconUrl = `https://openweathermap.org/img/wn/${item.weather[0]?.icon}@2x.png`;
     const dateTimeMillis = (item.dt + weatherData.timezone) * 1000;
     const formattedDate = new Date(dateTimeMillis);
@@ -129,13 +125,27 @@ const forecastList = everyFourthItem.map((item, index) => {
       } else {
         humidityIcon = faCloudShowersHeavy;
       }
+// change bar color according to temperature
+    let barTemperatureclassName = 'wr-day-carousel__item';
+    if (temperature >= 15) {
+      barTemperatureclassName = "wr-day-carousel__item highup";
+    } else if (temperature >= 5 && temperature < 15) {
+      barTemperatureclassName = "wr-day-carousel__item high";
+    } else if (temperature >= 0 && temperature < 5) {
+      barTemperatureclassName = "wr-day-carousel__item highlow";
+    } else if (temperature >= -5 && temperature < 0) {
+      barTemperatureclassName = "wr-day-carousel__item zero";
+    } else if (temperature >= -10 && temperature < -5) {
+      barTemperatureclassName = "wr-day-carousel__item low";
+    } else if (temperature < -10) {
+      barTemperatureclassName = "wr-day-carousel__item lowup";
+    }
 
     const pressure = item.main?.pressure;
     const pressureIcon = faTachometerAlt;
 
-
     return(
-    <div className="wr-day-carousel__item" key={index} >
+    <div className={barTemperatureclassName} key={index} data-daily-item>
         <a href='/'
             className="wr-day__content" onClick={onClickLinkHandler}>
             <div className="wr-day__title"

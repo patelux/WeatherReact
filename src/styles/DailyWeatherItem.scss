@@ -1,12 +1,11 @@
 .daily-forecast {
-    margin-bottom: 120px;
     @include mobile {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
 .wr-day-carousel__item {
     position: relative;
     min-height: 102px;
-    background-color:$sliderItemsBgColor;
+    background-color: $primaryBgColor;
     border-right: 1px solid rgba(0,0,0,.12);
     padding-bottom: 6px;
     margin: 94px 0 auto 0;
@@ -27,6 +26,7 @@
         &:before{
             background-color: rgba($accentColorTempretureHigh, 1);
         }
+        
         .wr-date__longish::after{
             width: 100%;
         }
@@ -317,7 +317,7 @@
             }
         }
         &.slick-next{
-            right: -1px;
+            right: -2px;
             background-image: url('../images/arrow-right.svg');
             background-repeat: no-repeat;
             background-position: center;
@@ -336,3 +336,329 @@
         }
 }
 
+// смена цвета в зависимости от температуры
+
+.wr-day-carousel__item.highup {
+    position: relative;
+    min-height: 102px;
+    background-color:$sliderItemsBgColor;
+    border-right: 1px solid rgba(0,0,0,.12);
+    padding-bottom: 6px;
+    margin: 94px 0 auto 0;
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background-color: rgba(250, 182, 23, .6);
+        transition: background-color 0.5s ease;
+    }
+    &:hover, &:focus{
+        &:before{
+            background-color:rgba(250, 182, 23, 1);
+        }
+        .wr-date__longish::after{
+            width: 100%;
+        }
+    }
+&.active {
+    min-height: 188px;
+    padding-bottom: 0px;
+    padding-top: 8px;
+    margin-top: 0px;
+    bottom: -29px;
+    z-index: 777;
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(250, 182, 23, .6);
+        transition: background-color 0.5s ease;
+    }
+    &:hover, &:focus{
+        &:before{
+            background-color: rgba(250, 182, 23, 1);
+        }
+    }
+}
+}
+.wr-day-carousel__item.high {
+    position: relative;
+    min-height: 102px;
+    background-color:$sliderItemsBgColor;
+    border-right: 1px solid rgba(0,0,0,.12);
+    padding-bottom: 6px;
+    margin: 94px 0 auto 0;
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background-color: rgba(252, 201, 13, .6);
+        transition: background-color 0.5s ease;
+    }
+    &:hover, &:focus{
+        &:before{
+            background-color: rgba(252, 201, 13, 1);
+        }
+        .wr-date__longish::after{
+            width: 100%;
+        }
+    }
+&.active {
+    min-height: 188px;
+    padding-bottom: 0px;
+    padding-top: 8px;
+    margin-top: 0px;
+    bottom: -29px;
+    z-index: 777;
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(252, 201, 13, .6);
+        transition: background-color 0.5s ease;
+    }
+    &:hover, &:focus{
+        &:before{
+            background-color: rgba(252, 201, 13, 1);
+        }
+    }
+}
+}
+.wr-day-carousel__item.highlow {
+    position: relative;
+    min-height: 102px;
+    background-color:$sliderItemsBgColor;
+    border-right: 1px solid rgba(0,0,0,.12);
+    padding-bottom: 6px;
+    margin: 94px 0 auto 0;
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background-color: rgba(168, 214, 172, .6);
+        transition: background-color 0.5s ease;
+    }
+    &:hover, &:focus{
+        &:before{
+            background-color: rgba(168, 214, 172, 1);
+        }
+        .wr-date__longish::after{
+            width: 100%;
+        }
+    }
+&.active {
+    min-height: 188px;
+    padding-bottom: 0px;
+    padding-top: 8px;
+    margin-top: 0px;
+    bottom: -29px;
+    z-index: 777;
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(168, 214, 172, .6);
+        transition: background-color 0.5s ease;
+    }
+    &:hover, &:focus{
+        &:before{
+            background-color: rgba(168, 214, 172, 1);
+        }
+    }
+}
+}
+.wr-day-carousel__item.zero {
+    position: relative;
+    min-height: 102px;
+    background-color:$sliderItemsBgColor;
+    border-right: 1px solid rgba(0,0,0,.12);
+    padding-bottom: 6px;
+    margin: 94px 0 auto 0;
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background-color:rgba(173, 219, 215, .6);
+        transition: background-color 0.5s ease;
+    }
+    &:hover, &:focus{
+        &:before{
+            background-color: rgba(173, 219, 215, 1);
+        }
+        .wr-date__longish::after{
+            width: 100%;
+        }
+    }
+&.active {
+    min-height: 188px;
+    padding-bottom: 0px;
+    padding-top: 8px;
+    margin-top: 0px;
+    bottom: -29px;
+    z-index: 777;
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(173, 219, 215, .6);
+        transition: background-color 0.5s ease;
+    }
+    &:hover, &:focus{
+        &:before{
+            background-color: rgba(173, 219, 215, 1);
+        }
+    }
+}
+}
+.wr-day-carousel__item.low {
+    position: relative;
+    min-height: 102px;
+    background-color:$sliderItemsBgColor;
+    border-right: 1px solid rgba(0,0,0,.12);
+    padding-bottom: 6px;
+    margin: 94px 0 auto 0;
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background-color:rgba(69, 163, 217, .6);
+        transition: background-color 0.5s ease;
+    }
+    &:hover, &:focus{
+        &:before{
+            background-color: rgba(69, 163, 217, 1);
+        }
+        .wr-date__longish::after{
+            width: 100%;
+        }
+    }
+&.active {
+    min-height: 188px;
+    padding-bottom: 0px;
+    padding-top: 8px;
+    margin-top: 0px;
+    bottom: -29px;
+    z-index: 777;
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color:rgba(69, 163, 217, .6);
+        transition: background-color 0.5s ease;
+    }
+    &:hover, &:focus{
+        &:before{
+            background-color:rgba(69, 163, 217, 1);
+        }
+    }
+}
+}
+.wr-day-carousel__item.lowup {
+    position: relative;
+    min-height: 102px;
+    background-color:$sliderItemsBgColor;
+    border-right: 1px solid rgba(0,0,0,.12);
+    padding-bottom: 6px;
+    margin: 94px 0 auto 0;
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background-color: rgba(55, 137, 200, .6);
+        transition: background-color 0.5s ease;
+    }
+    &:hover, &:focus{
+        &:before{
+            background-color:  rgba(55, 137, 200, 1);
+        }
+        .wr-date__longish::after{
+            width: 100%;
+        }
+    }
+&.active {
+    min-height: 188px;
+    padding-bottom: 0px;
+    padding-top: 8px;
+    margin-top: 0px;
+    bottom: -29px;
+    z-index: 777;
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color:  rgba(55, 137, 200, .6);
+        transition: background-color 0.5s ease;
+    }
+    &:hover, &:focus{
+        &:before{
+            background-color:  rgba(55, 137, 200, 1);
+        }
+    }
+}
+}

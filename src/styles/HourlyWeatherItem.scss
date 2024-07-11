@@ -1,15 +1,15 @@
 .hourly-forecast {
-    margin-bottom: 120px;
+    min-height: 210px;
     @include mobile {
         margin-bottom: 5px;
     }
     .wr-day-carousel__item {
         position: relative;
         min-height: 102px;
-        background-color:$sliderItemsBgColor;
+        background-color:$primaryBgColor;
         border-right: 1px solid rgba(0,0,0,.12);
         padding-bottom: 6px;
-        margin: 94px 0 auto 0;
+        margin: 0px 0 auto 0;
         &:before{
             content: '';
             display: block;
@@ -32,6 +32,7 @@
             }
         }
         .wr-day__content {
+            min-height: 210px;
             display: block;
             height: 100%;
             color: #141414;
@@ -51,84 +52,28 @@
         .wr-date {
             font-size: 15px;
         }
-        &.active {
-            min-height: 188px;
-            padding-bottom: 0px;
-            padding-top: 8px;
-            margin-top: 0px;
-            bottom: -19px;
-            z-index: 777;
-            &:before{
-                content: '';
-                display: block;
+        .wr-date__long {
+            display: none;
+        }
+        .wr-date__longish {
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            &::after{
+                content: "";
+                display: inline-block;
                 position: absolute;
-                height: 8px;
-                width: 100%;
-                top: 0;
                 left: 0;
                 right: 0;
-                background-color: rgba($accentColorTempretureHigh, 0.6);
-                transition: background-color 0.5s ease;
+                bottom: 0;
+                height: 1px;
+                width: 0;
+                background-color: #141414;
+                transition: width 0.3s ease;
             }
-            &:hover, &:focus{
-                &:before{
-                    background-color: rgba($accentColorTempretureHigh, 1);
-                }
-            }
-            .wr-day__content {
-                min-height: 180px;
-                padding: 16px 16px 16px;
-                transition: width 5s ease;
-            }
-            .wr-day__title {
-                font-size: 16px;
-            }
-            .wr-date {
-                font-size: 16px;
-            }
-            .wr-day__details__weather-type-description {
-                font-size: 16px;
-                display: block;
-                margin-left: 20px;
-                text-align: right;
-            }
-            .active .wr-day-temperature {
-                position: relative;
-                &::after{
-                    content: '';
-                    position: absolute;
-                    display: block;
-                    width: 1px;
-                    height: 100%;
-                    top: 0;
-                    bottom: 0;
-                    right: -15px;
-                    background-color: #141414;
-                }
-    
-    }}
-    
-    .wr-date__long {
-        display: none;
-    }
-    
-    .wr-date__longish {
-        position: relative;
-        display: inline-block;
-        &::after{
-            content: "";
-            display: inline-block;
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 1px;
-            width: 0;
-            background-color: #141414;
-            transition: width 0.3s ease;
         }
-    }
         .wr-day__body{
+            padding-top: 10px;
             height: 100%;
         }
         .wr-day__details-container {
@@ -141,7 +86,7 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-    
+
             height: 100%;
             margin-right: 0;
         }
@@ -156,12 +101,9 @@
         .wr-day__weather-type {
             display: block;
         }
-        // .wr-weather-type--day {
-        // }
         .wr-weather-type__text {
             display: none;
         }
-    // --------------------
         .wr-weather-type__icon {
             display: inline-block;
             width: 48px;
@@ -176,99 +118,255 @@
         .wr-day__temperature {
             margin-left: 0;
         }
-    }
-    
-    .wr-day-temperature__high {
-        text-align: right;
-        margin-bottom: 10px;
-    }
-    .wr-day-temperature__high-value {
-        font-size: 14px;
-        line-height: 1.2;
-        font-weight: bold;
-        text-align: right;
-    }
-    .active .wr-day-temperature__high-value {
-        font-size: 18px;
-    }
-    
-    .wr-day-temperature__low {
-        text-align: center;
-    }
-    .wr-day-temperature__low-value {
-        font-size: 14px;
-        line-height: 1.2;
-        font-weight: normal;
-        text-align: right;
-    }
-    .active .wr-day-temperature__low-value {
-        font-size: 18px;
-    }
-    // .wr-day__wind-speed {
-    // }
-    // .wr-wind-speed {
-    // }
-    // .wr-hide-visually {
-    // }
-    // .wr-wind-speed__description {
-    // }
-    // .wr-wind-speed__value {
-    // }
-    // .wr-wind-speed__icon {
-    // }
-    
-    
-    // Slick-Slider
-        .slick-slider{
-            padding: 0 30px
+        .wr-day-temperature__high {
+            text-align: right;
+            margin-bottom: 10px;
         }
-        .slick-track{
-            position: relative;
+        .wr-day-temperature__high-value {
+            font-size: 14px;
+            line-height: 1.2;
+            font-weight: bold;
+            text-align: right;
         }
-        .slick-arrow {
-            position: absolute;
-            top: 100%;
-            transform: translateY(-100%);
-            z-index: 10;
-            font-size: 0;
-            width: 32px;
-            height: calc(100% - 94px);
-            color: #fff;
-            background-color: #149edc;
-            &.slick-prev{
-                left: -1px;
-                background-image: url('../images/arrow-left.svg');
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 94px;
-                transition: all $transitionFunc;
-    
-                &:hover, &:focus{
-                    color: rgba(0, 0, 0, 0.5);
-                    background-color: #067eb3;
+        .wr-day-temperature__low {
+            text-align: center;
+        }
+        .wr-day-temperature__low-value {
+            font-size: 14px;
+            line-height: 1.2;
+            font-weight: normal;
+            text-align: right;
+        }
+    }
+        
+        // Slick-Slider
+            .slick-slider{
+                padding: 0 30px
+            }
+            .slick-track{
+                position: relative;
+            }
+            .slick-arrow {
+                position: absolute;
+                top: 100%;
+                transform: translateY(-100%);
+                z-index: 10;
+                font-size: 0;
+                width: 32px;
+                height: 100%;
+                // height: calc(100% - 94px);
+                color: #fff;
+                background-color: #149edc;
+                &.slick-prev{
+                    left: -1px;
+                    background-image: url('../images/arrow-left.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
                     background-size: 94px;
+                    transition: all $transitionFunc;
+        
+                    &:hover, &:focus{
+                        color: rgba(0, 0, 0, 0.5);
+                        background-color: #067eb3;
+                        background-size: 94px;
+                        
+                    }
+                    &:before {
+                        content: none;
+                    }
+                }
+                &.slick-next{
+                    right: -1px;
+                    background-image: url('../images/arrow-right.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 94px;
+                    transition: all $transitionFunc;
                     
-                }
-                &:before {
-                    content: none;
-                }
-            }
-            &.slick-next{
-                right: -1px;
-                background-image: url('../images/arrow-right.svg');
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 94px;
-                transition: all $transitionFunc;
-                
-                &:hover, &:focus{
-                    color: rgba(0, 0, 0, 0.5);
-                    background-color: #067eb3;
-                    background-size: 94px;
-                }
-                &:before {
-                    content: none;
+                    &:hover, &:focus{
+                        color: rgba(0, 0, 0, 0.5);
+                        background-color: #067eb3;
+                        background-size: 94px;
+                    }
+                    &:before {
+                        content: none;
+                    }
                 }
             }
+// color for bar according to temperature:
+    .wr-day-carousel__item.highup {
+        position: relative;
+        min-height: 102px;
+        background-color:$sliderItemsBgColor;
+        border-right: 1px solid rgba(0,0,0,.12);
+        padding-bottom: 6px;
+        margin: 0px 0 auto 0;
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background-color: rgba(250, 182, 23, .6);
+            transition: background-color 0.5s ease;
+        }
+        &:hover, &:focus{
+            &:before{
+                background-color:rgba(250, 182, 23, 1);
             }
+            .wr-date__longish::after{
+                width: 100%;
+            }
+        }
     }
+    .wr-day-carousel__item.high {
+        position: relative;
+        min-height: 102px;
+        background-color:$sliderItemsBgColor;
+        border-right: 1px solid rgba(0,0,0,.12);
+        padding-bottom: 6px;
+        margin: 0px 0 auto 0;
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background-color: rgba(252, 201, 13, .6);
+            transition: background-color 0.5s ease;
+        }
+        &:hover, &:focus{
+            &:before{
+                background-color: rgba(252, 201, 13, 1);
+            }
+            .wr-date__longish::after{
+                width: 100%;
+            }
+        }
+    }
+    .wr-day-carousel__item.highlow {
+        position: relative;
+        min-height: 102px;
+        background-color:$sliderItemsBgColor;
+        border-right: 1px solid rgba(0,0,0,.12);
+        padding-bottom: 6px;
+        margin: 0px 0 auto 0;
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background-color: rgba(168, 214, 172, .6);
+            transition: background-color 0.5s ease;
+        }
+        &:hover, &:focus{
+            &:before{
+                background-color: rgba(168, 214, 172, 1);
+            }
+            .wr-date__longish::after{
+                width: 100%;
+            }
+        }
+    }
+    .wr-day-carousel__item.zero {
+        position: relative;
+        min-height: 102px;
+        background-color:$sliderItemsBgColor;
+        border-right: 1px solid rgba(0,0,0,.12);
+        padding-bottom: 6px;
+        margin: 0px 0 auto 0;
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background-color:rgba(173, 219, 215, .6);
+            transition: background-color 0.5s ease;
+        }
+        &:hover, &:focus{
+            &:before{
+                background-color: rgba(173, 219, 215, 1);
+            }
+            .wr-date__longish::after{
+                width: 100%;
+            }
+        }
+    }
+    .wr-day-carousel__item.low {
+        position: relative;
+        min-height: 102px;
+        background-color:$sliderItemsBgColor;
+        border-right: 1px solid rgba(0,0,0,.12);
+        padding-bottom: 6px;
+        margin: 0px 0 auto 0;
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background-color:rgba(69, 163, 217, .6);
+            transition: background-color 0.5s ease;
+        }
+        &:hover, &:focus{
+            &:before{
+                background-color: rgba(69, 163, 217, 1);
+            }
+            .wr-date__longish::after{
+                width: 100%;
+            }
+        }
+    }
+    .wr-day-carousel__item.lowup {
+        position: relative;
+        min-height: 102px;
+        background-color:$sliderItemsBgColor;
+        border-right: 1px solid rgba(0,0,0,.12);
+        padding-bottom: 6px;
+        margin: 0px 0 auto 0;
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background-color: rgba(55, 137, 200, .6);
+            transition: background-color 0.5s ease;
+        }
+        &:hover, &:focus{
+            &:before{
+                background-color:  rgba(55, 137, 200, 1);
+            }
+            .wr-date__longish::after{
+                width: 100%;
+            }
+        }
+    }
+
+}

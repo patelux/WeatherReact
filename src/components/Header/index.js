@@ -3,23 +3,15 @@ import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-// import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-// import Button from '@mui/material/Button';
-import logo from '../../images/logo1.png';
+import logo from '../../images/logo1.webp';
 import MenuItem from '@mui/material/MenuItem';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import PersonIcon from '@mui/icons-material/Person';
-import Face2Icon from '@mui/icons-material/Face2';
-
-// const pages = ['Products', 'Pricing', 'Blog'];
-// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -34,7 +26,7 @@ function Header() {
     setAnchorElNav(null);
   };
   const getNavList = () => {
-    fetch('./data/navigation_en.json')
+    fetch('/data/navigation_en.json')
         .then(res => res.json())
         .then(resp => {
             setNavList(resp)
@@ -53,8 +45,8 @@ useEffect(()=> {
 }, []);
 
 const navListRender = navList.map((item, index) => {
-    const url = item.id ? item.url+'/'+item.id : item.url;
-    return <li className="nav-item" key={index} onClick={handleCloseNavMenu}><NavLink to={url}className="nav_link"><span className="link-subtitle">{item.title}</span></NavLink>
+    const url = item.url;
+    return <li className="nav-item" key={index} onClick={handleCloseNavMenu}><NavLink to={url} className="nav_link"><span className="link-subtitle">{item.title}</span></NavLink>
     </li>
 })
 
@@ -83,28 +75,13 @@ const socialListRender = socialList.map((item, index) => {
 
   return (
     <AppBar position="static" className='header'>
-      <Container maxWidth="xl" >
+      <div className="container">
         <nav className="main_nav">
            <div className="logo-wrapper">
                 <a href="/" className="logo_link">
                     <img src={logo} alt="logo" className="logo" />
                 </a>
             </div>  
-            <div className="login-wrapper">
-                <div id="login-statusbar" className="login-statusbar active">
-                    <a id="login-link" className="login-link" href="/" >
-                        <PersonIcon fontSize= "large" className="login-img"/>
-                        <span id="login-username" className="login-username">Sign in</span>
-                    </a>
-                </div>
-                <div id="account-statusbar" className="account-statusbar">
-                    <a id="account-link" className="account-link" href="/" >
-                        <Face2Icon fontSize= "large" className="account-img"/>
-                        <span id="account-username" className="account-username">Name</span>
-                    </a>
-                </div>
-            </div>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' }, order: {xs: -2} }}>
             <IconButton
               size="large"
@@ -154,14 +131,8 @@ const socialListRender = socialList.map((item, index) => {
                 </ul>
             </div>
 
-          {/* <Box  className="nav-list_wrapper"sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
-
-          </Box> */}
-
-          {/* login button */}
-
         </nav>
-      </Container>
+      </div>
     </AppBar>
   );
 }

@@ -1,5 +1,5 @@
-.local-forecast .current-forecast{
-    margin-bottom: 80px;
+.current-forecast{
+    width: 100%;
     @include mobile {
         margin-bottom: 5px;
     }
@@ -388,4 +388,245 @@
         }
     }
 }
-
+.current-forecast{
+    .wr-day-carousel__item.highup {
+        position: relative;
+        min-height: 188px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        background-color: rgba(20, 156, 219, .8);
+        margin: auto 0 auto 0;
+        padding: 20px 0;
+        @include mobile {
+            min-height: 0px;
+            gap: 0px;
+            padding: 5px 0;
+        }
+        &:before{
+            content: '';
+                display: block;
+                position: absolute;
+                height: 8px;
+                width: 100%;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 2;
+                background-color: rgba(250, 182, 23, .6);
+                transition: background-color 0.5s ease;
+        }
+        &:hover, &:focus{
+            &:before{
+                background-color:rgba(250, 182, 23, 1);
+            }
+            .wr-date__longish::after{
+                width: 100%;
+            }
+        }
+    }
+    .wr-day-carousel__item.high {
+        position: relative;
+        min-height: 188px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        background-color: rgba(20, 156, 219, .8);
+        margin: auto 0 auto 0;
+        padding: 20px 0;
+        @include mobile {
+            min-height: 0px;
+            gap: 0px;
+            padding: 5px 0;
+        }
+        &:before{
+            content: '';
+                display: block;
+                position: absolute;
+                height: 8px;
+                width: 100%;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 2;
+                background-color: rgba(252, 201, 13, .6);
+                transition: background-color 0.5s ease;
+        }
+        &:hover, &:focus{
+            &:before{
+                background-color: rgba(252, 201, 13, 1);
+            }
+            .wr-date__longish::after{
+                width: 100%;
+            }
+        }
+    }
+    .wr-day-carousel__item.highlow {
+        position: relative;
+        min-height: 188px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        background-color: rgba(20, 156, 219, .8);
+        margin: auto 0 auto 0;
+        padding: 20px 0;
+        @include mobile {
+            min-height: 0px;
+            gap: 0px;
+            padding: 5px 0;
+        }
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background-color: rgba(168, 214, 172, .6);
+            transition: background-color 0.5s ease;
+        }
+        &:hover, &:focus{
+            &:before{
+                background-color: rgba(168, 214, 172, 1);
+            }
+            .wr-date__longish::after{
+                width: 100%;
+            }
+        }
+    }
+    .wr-day-carousel__item.zero {
+        position: relative;
+        min-height: 188px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        background-color: rgba(20, 156, 219, .8);
+        margin: auto 0 auto 0;
+        padding: 20px 0;
+        @include mobile {
+            min-height: 0px;
+            gap: 0px;
+            padding: 5px 0;
+        }
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background-color:rgba(173, 219, 215, .6);
+            transition: background-color 0.5s ease;
+        }
+        &:hover, &:focus{
+            &:before{
+                background-color: rgba(173, 219, 215, 1);
+            }
+            .wr-date__longish::after{
+                width: 100%;
+            }
+        }
+    }
+    .wr-day-carousel__item.low {
+        position: relative;
+        min-height: 188px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        background-color: rgba(20, 156, 219, .8);
+        margin: auto 0 auto 0;
+        padding: 20px 0;
+        @include mobile {
+            min-height: 0px;
+            gap: 0px;
+            padding: 5px 0;
+        }
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background-color:rgba(69, 163, 217, .6);
+            transition: background-color 0.5s ease;
+        }
+        &:hover, &:focus{
+            &:before{
+                background-color: rgba(69, 163, 217, 1);
+            }
+            .wr-date__longish::after{
+                width: 100%;
+            }
+        }
+    }
+    .wr-day-carousel__item.lowup {
+        position: relative;
+        min-height: 188px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        background-color: rgba(20, 156, 219, .8);
+        margin: auto 0 auto 0;
+        padding: 20px 0;
+        @include mobile {
+            min-height: 0px;
+            gap: 0px;
+            padding: 5px 0;
+        }
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            background-color: rgba(55, 137, 200, .6);
+            transition: background-color 0.5s ease;
+        }
+        &:hover, &:focus{
+            &:before{
+                background-color:  rgba(55, 137, 200, 1);
+            }
+            .wr-date__longish::after{
+                width: 100%;
+            }
+        }
+    }
+}

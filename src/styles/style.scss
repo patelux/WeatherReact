@@ -7,6 +7,7 @@
 @import './DailyWeatherItem.scss';
 @import './CurrentWeatherItem.scss';
 @import './HourlyWeatherItem.scss';
+@import './Contacts.scss';
 @import './Footer.scss';
 
 .page_wrapper{
@@ -172,13 +173,14 @@ header {
     align-items: center;
     .nav_list {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         position: relative;
         width: 100%;
         padding: 0;
         list-style-type: none;
         font-size: 13px;
         font-weight: 700;
+        gap: 100px;
     }
     header .nav_item {
     color: $primaryTextColor;
@@ -295,6 +297,9 @@ header.header .css-hip9hq-MuiPaper-root-MuiAppBar-root{
     @include mobile{
         gap: 15px;  
     }
+    @include smallmobile{
+        display: none;
+    }
 }
 .social-link {
     width: 46px;
@@ -330,7 +335,6 @@ header.header .css-hip9hq-MuiPaper-root-MuiAppBar-root{
         color: $primaryTextColor;
     }}
 
-
 .icon-social-link {
     font-size: 12px;
     color: $primaryTextColor;
@@ -340,15 +344,18 @@ header.header .css-hip9hq-MuiPaper-root-MuiAppBar-root{
 // MAIN 
 // Search
 div.search {
+    position: relative;
+    z-index: 10;
     background-color: $accentColor;
-
+    .container{
+        padding-top: 20px;
+    }
     .MuiGrid-container {
         min-height: 64px;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
-        padding-top: 30px;
     }
     .search-item {
         padding-top: 0;
@@ -378,22 +385,22 @@ span.error{
     height: 30px;
     font-size: 16px;
     font-weight: 500;
-    color: rgb(255, 0 , 0);
+    color: rgb(166, 10, 61);
     text-align: center;
     margin: 0 auto;
-    padding: 5px 0px 5px 0px;
+    padding: 5px 0px 10px 0px;
 }
-body main .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline{
+body main .MuiOutlinedInput-notchedOutline{
     border-color: none;
     border: 2px solid #FFF;
     border-radius: 0px;
     transition: all $transitionFunc;  
 }
-body main .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+body main .MuiInputBase-root.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
     border: 2px solid $btnHoverColor;
     border-radius: 0;
 }
-button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.search-btn.css-sghohy-MuiButtonBase-root-MuiButton-root{
+button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.search-btn{
     padding-left: 10px;
     padding-right: 10px;
     background-color: $accentColor;
@@ -414,54 +421,40 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
     }
 }
 
-// forecast curreny + 5-days + hourly
-.wr-day-container
-    p {
-        text-align: center;
-        font-size: 26px;
-        font-weight: 500;
-        padding-bottom: 10px;
-        color:#141414;
- }
-
-
+// Forecast curreny + 5-days + hourly
+// .wr-day-container (bg image)
 .wr-day-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0px 0;
-
-    font-size: 1rem;
-    min-height: 274px;
-    height: calc(100vh - 256px);
-    background-color: #5a5a5a;
-    background-image: url(../images/day/sunny-day-desktop.jpg);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
-    @include tablet{
-        min-height: 244px;
+        height: calc(100vh - 178px);
+        min-height: 691px;
+        font-size: 1rem;
+        background-color: #5a5a5a;
+        background-image: url(../images/day/sunny-day-desktop.jpg);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+    @include tablet{ 
         background-image: url(../images/day/sunny-day-tablet.jpg);
     }
     @include mobile{
-        padding: 20px 0;
-        min-height: 290px;
-        background-image: url(../images/day/sunny-day-mobile.jpg);
+        background-image: url(../images/day/sunny-day-mobile.webp);
+        @media screen and (min-height: 0px) and (max-height: 670px){
+            .wr-day-container{height: 100%;}
+        }
     }
     @include smallmobile{
-        min-height: 234px;
-        background-image: url(../images/day/sunny-day-smallmobile.jpg);     
+        background-image: url(../images/day/sunny-day-smallmobile.webp);     
     }
+
 &.clouds{
     background-image: url(../images/day/cloud-day-desktop.jpg);
     @include tablet{
         background-image: url(../images/day/cloud-day-tablet.jpg);
     }
     @include mobile{
-        background-image: url(../images/day/cloud-day-mobile.jpg);
+        background-image: url(../images/day/cloud-day-mobile.webp);
     }
     @include smallmobile{
-        background-image: url(../images/day/cloud-day-smallmobile.jpg);     
+        background-image: url(../images/day/cloud-day-smallmobile.webp);     
     }
 }
 &.rain{
@@ -494,10 +487,10 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
         background-image: url(../images/day/sunny-day-tablet.jpg);
     }
     @include mobile{
-        background-image: url(../images/day/sunny-day-mobile.jpg);
+        background-image: url(../images/day/sunny-day-mobile.webp);
     }
     @include smallmobile{
-        background-image: url(../images/day/sunny-day-smallmobile.jpg);     
+        background-image: url(../images/day/sunny-day-smallmobile.webp);     
     }
 }
 &.night {
@@ -507,40 +500,45 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
         background-image: linear-gradient(0deg, rgba(255,255,255,0.12) 100%, rgba(255,255,255,0.12) 100%), url(../images/night/night-tablet.jpg);
     }
     @include mobile{
-        background-image: linear-gradient(0deg, rgba(255,255,255,0.12) 100%, rgba(255,255,255,0.12) 100%), url(../images/night/night-mobile.jpg);
+        background-image: linear-gradient(0deg, rgba(255,255,255,0.12) 100%, rgba(255,255,255,0.12) 100%), url(../images/night/night-mobile.webp);
     }
     @include smallmobile{
-        background-image: linear-gradient(0deg, rgba(255,255,255,0.12) 100%, rgba(255,255,255,0.12) 100%), url(../images/night/night-smallmobile.jpg);     
+        background-image: linear-gradient(0deg, rgba(255,255,255,0.12) 100%, rgba(255,255,255,0.12) 100%), url(../images/night/night-smallmobile.webp);     
     }
-}}
-.local-forecast.css-1oqqzyl-MuiContainer-root {
-    width: 100%;
+}
+.container{
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 0px 90px 0px;
 }
-.wr-day-container.current-forecast, .wr-day-container.daily-forecast{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+}
+@media screen and (min-height: 0px) and (max-height: 690px){
+    .wr-day-container{
+        height: 100%;
+    }
 }
 .wr-location {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
-    
     justify-content: space-between;
-    min-height: 58px;
+    color: #FFF;
+    gap: 20px;
+    width: 100%;
     color: $secondaryTextColor;
-    padding: 24px 24px 0px;
-    margin-bottom: 16px;
-    @include mobile{
+    padding: 20px 10px 10px;
+    margin-bottom: 10px;
+    @include smallmobile{
         flex-direction: column;
         justify-content: flex-start;
         gap: 10px;
         padding: 8px 8px 0px;
+        margin-bottom: 5px;
+        align-items: center;
     }
 }
 .location-title-wrapper{
@@ -552,6 +550,13 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
     background-color: rgba(0,0,0,.12);
     padding: 10px;
     border-radius: 4px;
+    @include smallmobile{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 0 auto;
+    }
 }
 .wr-location__name {
     font-size: 26px;
@@ -565,6 +570,9 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
     font-size: 18px;
     @include mobile{
         font-size: 16px;
+    }
+    @include smallmobile{
+        text-align: center;
     }
 }
 .wr-sunrise{
@@ -596,8 +604,6 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
         justify-content: space-between ;
     } 
 }
-
-
 .btn-wrapper{
     display: flex;
     align-items: center;
@@ -606,12 +612,23 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
     gap: 10px;
     margin: 0 0 0 auto;
     @include mobile{
+        height: 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: space-between;
+        align-items: center;
+        margin: 0;
+    }
+    @include smallmobile{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
         margin: 0 auto;
     }
 }
 .btn-wrapper .wr-location__overview{
-    width: 100%;
+    min-width: 100px;
     font-size: 16px;
     text-transform: uppercase;
     text-align: center;
@@ -644,14 +661,15 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
 }
 // footer section
 .footer{
+    min-height: 90px;
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 10;
     background-color: $secondaryBgColor;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
   
 .copyright-box{

@@ -57,33 +57,40 @@ const getOrdinalSuffix = (day) => {
 const settings = {
       dots: false,
       infinite: true,
-      speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 1,
+      speed: 700,
+      slidesToShow: 10,
+      slidesToScroll: 8,
       responsive: [
         {
           breakpoint: 1400,
           settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            infinite: true
+            slidesToShow: 8,
+            slidesToScroll: 1
           }
         },
         {
             breakpoint: 1200,
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 5,
+                slidesToScroll: 1
             }
         },
         {
           breakpoint: 800,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 600,
           settings: {
             slidesToShow: 2,
             slidesToScroll: 1
           }
         },
         {
-          breakpoint: 500,
+          breakpoint: 360,
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1
@@ -91,22 +98,35 @@ const settings = {
         }
       ]
   };
-// const everyFourthItem = weatherStoreDaily.filter((item, index) => index % 8 === 0);
-// const everyFourthItem = weatherStoreDaily.filter((item, index) => index % 8 === 0);
+
 const forecastList = weatherStoreDaily.map((item, index) => {
     const temperature_max = temperatureInCelcius(item.main?.temp_max);
     const temperature_min = temperatureInCelcius(item.main?.temp_min);
     const iconUrl = `https://openweathermap.org/img/wn/${item.weather[0]?.icon}@2x.png`;
     const dateTimeMillis = (item.dt + weatherData.timezone) * 1000;
-    // const dateTimeMillis = (item.dt + item.timezone) * 1000;
+    const temperature = temperatureInCelcius(item.main?.temp);
     const formattedDate = new Date(dateTimeMillis);
     const currentDate =   getOrdinalSuffix(formattedDate.getUTCDate());
     const currentDay = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(formattedDate);
-    // const currentDayShort = new Intl.DateTimeFormat('en-US', { weekday: 'short' }).format(formattedDate);
     const currentMonth = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(formattedDate);
+// change bar color according to temperature
+let barTemperatureclassName = 'wr-day-carousel__item';
+if (temperature >= 15) {
+  barTemperatureclassName = "wr-day-carousel__item highup";
+} else if (temperature >= 5 && temperature < 15) {
+  barTemperatureclassName = "wr-day-carousel__item high";
+} else if (temperature >= 0 && temperature < 5) {
+  barTemperatureclassName = "wr-day-carousel__item highlow";
+} else if (temperature >= -5 && temperature < 0) {
+  barTemperatureclassName = "wr-day-carousel__item zero";
+} else if (temperature >= -10 && temperature < -5) {
+  barTemperatureclassName = "wr-day-carousel__item low";
+} else if (temperature < -10) {
+  barTemperatureclassName = "wr-day-carousel__item lowup";
+}
 
     return(
-    <div className="wr-day-carousel__item" key={index} >
+    <div className={barTemperatureclassName} key={index} >
         <div
             className="wr-day__content">
             <div className="wr-day__title"

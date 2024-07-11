@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import photo from '../../images/photo4.jpg';
+import photo from '../../images/photo4.webp';
 
 export default function ModalFooter () {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -51,14 +51,14 @@ export default function ModalFooter () {
   const onClickHandler = (e) => {
     e.preventDefault();
     setIsModalOpen(true)}
-
+    const screenWidth = window.innerWidth;
   return (
     <>
       <div className="footer-text">
         Developed by
-        <a href="/" data-open-modal className="footer-text-right" onClick={onClickHandler}>
+        {screenWidth > 767 ? <a href="/" data-open-modal className="footer-text-right" onClick={onClickHandler} >
           Patelux
-        </a>
+        </a> : <span>{` Patelux `}</span>}
       </div>
       <div className="backdrop-team is-hidden" data-backdrop>
         <div className="modal-team">
@@ -76,7 +76,6 @@ export default function ModalFooter () {
               <div className="team-unit">
                 <h3 className="person-name">Levenets Natalia</h3>
                 <p className="person-position">FrontEnd Developer</p>
-
             </div>
           </div>
         </div>

@@ -40,7 +40,7 @@ export default function CurrentWeatherItem(props){
           setWeatherData({
             currentCity: weatherStoreCurrent.name || '',
             country: weatherStoreCurrent.sys?.country || '',
-            icon: weatherStoreCurrent.weather[0]?.icon || '',
+            icon: weatherStoreCurrent.weather[0]?.icon || '04d',
             main: weatherStoreCurrent.weather[0]?.main || '',
             description: weatherStoreCurrent.weather[0]?.description || '',
             temp_max: weatherStoreCurrent.main.temp_max || null,
@@ -106,6 +106,7 @@ function temperatureInCelcius(temp) {
 // парсинг данных
 const temperature_max = temperatureInCelcius(weatherData.temp_max);
 const temperature_min = temperatureInCelcius(weatherData.temp_min);
+const temperature = temperatureInCelcius(weatherData.temp);
 const iconUrl = `https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`;
 const visibilityInMeters = weatherData.visibility;
 
@@ -129,8 +130,24 @@ const pressure = weatherData.pressure;
     pressureIcon = faTachometerAlt;
   }
 
+  // change bar color according to temperature
+  let barTemperatureclassName;
+  if (temperature >= 15) {
+    barTemperatureclassName = "wr-day-carousel__item highup";
+  } else if (temperature >= 5 && temperature < 15) {
+    barTemperatureclassName = "wr-day-carousel__item high";
+  } else if (temperature >= 0 && temperature < 5) {
+    barTemperatureclassName = "wr-day-carousel__item highlow";
+  } else if (temperature >= -5 && temperature < 0) {
+    barTemperatureclassName = "wr-day-carousel__item zero";
+  } else if (temperature >= -10 && temperature < -5) {
+    barTemperatureclassName = "wr-day-carousel__item low";
+  } else if (temperature < -10) {
+    barTemperatureclassName = "wr-day-carousel__item lowup";
+  }
+
     return (  
-            <div className="wr-day-carousel__item">
+            <div className={barTemperatureclassName} >
                 <div className="wr-day__content">
                     <div className="wr-day__title">
                         <div className="wr-date">
