@@ -80,7 +80,7 @@ const socialListRender = socialList.map((item, index) => {
            <div className="logo-wrapper">
            <NavLink to="/" className="logo_link">
                     <img src={logo} alt="logo" className="logo" />
-                </a>
+                </NavLink>
             </div>  
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' }, order: {xs: -2} }}>
             <IconButton
