@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/WeatherReact/static/css/main.c72ea42e.css",
-    "main.js": "/WeatherReact/static/js/main.a390354f.js",
-    "static/media/logo1.png": "/WeatherReact/static/media/logo1.a24dc237e6e7030aa2c1.png",
-    "static/media/photo4.jpg": "/WeatherReact/static/media/photo4.ca62faaeb3fa848db750.jpg",
+    "main.css": "/WeatherReact/static/css/main.d41e83ea.css",
+    "main.js": "/WeatherReact/static/js/main.7a129012.js",
+    "static/js/787.6b7abe35.chunk.js": "/WeatherReact/static/js/787.6b7abe35.chunk.js",
+    "static/media/logo1.webp": "/WeatherReact/static/media/logo1.21da6ff8ede945e16118.webp",
     "static/media/rain-day-desktop.jpg": "/WeatherReact/static/media/rain-day-desktop.91a1a6a54626935a9c13.jpg",
     "static/media/snow-day-desktop.jpg": "/WeatherReact/static/media/snow-day-desktop.9e97f9561d964f16c718.jpg",
     "static/media/night-desktop.jpg": "/WeatherReact/static/media/night-desktop.6299ac716a49b2c5ce43.jpg",
@@ -13,24 +13,30 @@
     "static/media/snow-day-tablet.jpg": "/WeatherReact/static/media/snow-day-tablet.4079ffb497295e6ba0a5.jpg",
     "static/media/rain-day-mobile.jpg": "/WeatherReact/static/media/rain-day-mobile.201240a42571c3e07ea0.jpg",
     "static/media/rain-day-smallmobile.jpg": "/WeatherReact/static/media/rain-day-smallmobile.0ae400de1891a34a453b.jpg",
+    "static/media/photo4.webp": "/WeatherReact/static/media/photo4.b18bc8e3d004ce05a715.webp",
     "static/media/snow-day-mobile.jpg": "/WeatherReact/static/media/snow-day-mobile.16c58aa310a0f15dc06e.jpg",
     "static/media/sunny-day-tablet.jpg": "/WeatherReact/static/media/sunny-day-tablet.136d2a403dfe3572b55e.jpg",
     "static/media/cloud-day-tablet.jpg": "/WeatherReact/static/media/cloud-day-tablet.ebf446088f2f145254a7.jpg",
+    "static/media/cloud-day-mobile.webp": "/WeatherReact/static/media/cloud-day-mobile.3a94dc1233caad3def4f.webp",
     "static/media/snow-day-smallmobile.jpg": "/WeatherReact/static/media/snow-day-smallmobile.7261df8f31d6946b1f4b.jpg",
-    "static/media/cloud-day-mobile.jpg": "/WeatherReact/static/media/cloud-day-mobile.7c62c5d3f3a6f3bfe4a4.jpg",
-    "static/media/cloud-day-smallmobile.jpg": "/WeatherReact/static/media/cloud-day-smallmobile.d850e1b8c526bcb6ec6b.jpg",
+    "static/media/cloud-day-smallmobile.webp": "/WeatherReact/static/media/cloud-day-smallmobile.8e147d13631477dcbe84.webp",
+    "static/media/sunny-day-mobile.webp": "/WeatherReact/static/media/sunny-day-mobile.d1be1e9613d448df3401.webp",
+    "static/media/sunny-day-smallmobile.webp": "/WeatherReact/static/media/sunny-day-smallmobile.c04fd2320ca69d2c38db.webp",
+    "static/media/night-mobile.webp": "/WeatherReact/static/media/night-mobile.7910ad1d22ab1260ba07.webp",
     "static/media/slick.svg": "/WeatherReact/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/WeatherReact/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/WeatherReact/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/night-smallmobile.webp": "/WeatherReact/static/media/night-smallmobile.957c8aa01f0b9df49a1c.webp",
     "static/media/slick.woff": "/WeatherReact/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/WeatherReact/index.html",
     "static/media/arrow-left.svg": "/WeatherReact/static/media/arrow-left.f5afc7d4e9af4b1ffa79.svg",
     "static/media/arrow-right.svg": "/WeatherReact/static/media/arrow-right.01a35f7284e75510afb0.svg",
-    "main.c72ea42e.css.map": "/WeatherReact/static/css/main.c72ea42e.css.map",
-    "main.a390354f.js.map": "/WeatherReact/static/js/main.a390354f.js.map"
+    "main.d41e83ea.css.map": "/WeatherReact/static/css/main.d41e83ea.css.map",
+    "main.7a129012.js.map": "/WeatherReact/static/js/main.7a129012.js.map",
+    "787.6b7abe35.chunk.js.map": "/WeatherReact/static/js/787.6b7abe35.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c72ea42e.css",
-    "static/js/main.a390354f.js"
+    "static/css/main.d41e83ea.css",
+    "static/js/main.7a129012.js"
   ]
 }
