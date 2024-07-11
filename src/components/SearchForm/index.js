@@ -14,9 +14,9 @@ import SearchIcon from '@mui/icons-material/Search';
 
 
 const MY_API_KEY = '5be78af818ee7dcfc981e54df16594ea';
-const API_URL = `https:/api.openweathermap.org/data/2.5/weather`;
+const API_URL = `https://api.openweathermap.org/data/2.5/weather`;
 const MY_API_KEY_DAILY = '6937530a137795579f942882f64a8f1a';
-const API_URL_DAILY = `https:/api.openweathermap.org/data/2.5/forecast`;
+const API_URL_DAILY = `https://api.openweathermap.org/data/2.5/forecast`;
 
 export default function SearchForm () {
     const inputRef = useRef(null);
